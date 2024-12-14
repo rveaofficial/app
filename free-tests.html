@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,139 +10,136 @@
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
+            padding: 20px;
         }
-        .header {
-            background-color: #007bff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-        }
+
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 0 auto;
             background: #fff;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
-        .instructions {
-            font-size: 1.1em;
-            line-height: 1.6;
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
+
         .btn-start {
-            display: block;
-            margin: 20px auto;
+            margin-top: 20px;
+            display: inline-block;
             padding: 10px 20px;
             font-size: 1.2em;
-            font-weight: bold;
         }
-        .btn-start:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
+
+        .form-control {
+            margin-bottom: 15px;
         }
-        .home-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1em;
+
+        .instruction-list {
+            padding-left: 20px;
         }
-        .home-link a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
+
+        .instruction-list li {
+            margin-bottom: 10px;
         }
-        .form-section {
+
+        .card {
             margin-top: 30px;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
-    <header class="header">
-        <h1>RVEA Ravi Educational Academy</h1>
-        <p>Your Gateway to Success</p>
-    </header>
-
     <div class="container">
-        <h2 class="text-center mb-4">JEE Mains Instructions</h2>
-        <div class="instructions">
-            <p>Please read the following instructions carefully before starting the exam:</p>
-            <ul>
-                <li>The total duration of the test is <strong>180 minutes</strong>.</li>
-                <li>There are three sections: <strong>Mathematics, Physics, and Chemistry</strong>.</li>
-                <li>Each section contains 20 multiple-choice questions.</li>
-                <li>You will earn <strong>4 marks</strong> for each correct answer and lose <strong>1 mark</strong> for each incorrect answer.</li>
-                <li>You can navigate between sections at any time during the test.</li>
-                <li>Please ensure you have a stable internet connection throughout the test.</li>
-                <li>Once the timer ends, the test will be automatically submitted.</li>
-                <li>Do not refresh or close the browser window during the test.</li>
-                <li>Click the "Start Test" button to begin.</li>
-            </ul>
+        <h1 class="text-center">Welcome to RV Educational Academy</h1>
+        <p class="text-center">Please read the instructions carefully before starting the test.</p>
+
+        <div class="card">
+            <div class="card-header">
+                <h5>Test Instructions</h5>
+            </div>
+            <div class="card-body">
+                <ul class="instruction-list">
+                    <li>Ensure a stable internet connection during the test.</li>
+                    <li>Keep your phone or any other communication device away.</li>
+                    <li>There will be no break during the test.</li>
+                    <li>You are allowed only one attempt to complete the test.</li>
+                    <li>Answer all questions to the best of your ability.</li>
+                    <li>If you face any issues, contact the support team immediately.</li>
+                    <li>The test will be time-bound, so complete it within the given duration.</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="form-section">
-            <h4 class="text-center">Fill in Your Details</h4>
-            <form id="userForm">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="whatsapp" class="form-label">WhatsApp Number</label>
-                    <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email ID</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <button type="submit" class="btn btn-success w-100">Submit</button>
-            </form>
-        </div>
+        <form id="studentForm" method="POST" action="https://formspree.io/f/myzyarkk">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+                <label for="whatsapp" class="form-label">WhatsApp Number</label>
+                <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="Enter your WhatsApp number" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email ID</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Submit</button>
+            <button type="button" id="startTest" class="btn btn-primary btn-start" disabled>Start Test</button>
+        </form>
 
-        <button id="startButton" onclick="location.href='https://www.nta.ac.in/Quiz/Home/Login?PaperID=3991'" class="btn btn-primary btn-start" disabled>Start Test</button>
-        <div class="home-link">
-            <a href="index.html">&#x2190; Back to Home</a>
-        </div>
-    </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Check form validation to enable the Start Test button
+                $("#studentForm").on("input", function () {
+                    const name = $("#name").val().trim();
+                    const whatsapp = $("#whatsapp").val().trim();
+                    const email = $("#email").val().trim();
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            const form = $('#userForm');
-            const startButton = $('#startButton');
-
-            form.on('input', function () {
-                const name = $('#name').val().trim();
-                const whatsapp = $('#whatsapp').val().trim();
-                const email = $('#email').val().trim();
-
-                if (name && whatsapp && email) {
-                    startButton.prop('disabled', false);
-                } else {
-                    startButton.prop('disabled', true);
-                }
-            });
-
-            form.on('submit', function (event) {
-                event.preventDefault();
-                const name = $('#name').val().trim();
-                const whatsapp = $('#whatsapp').val().trim();
-                const email = $('#email').val().trim();
-
-                $.ajax({
-                    url: '/submitDetails',
-                    type: 'POST',
-                    data: { name, whatsapp, email },
-                    success: function (response) {
-                        alert('Your details have been submitted successfully!');
-                    },
-                    error: function () {
-                        alert('An error occurred while submitting your details. Please try again.');
+                    if (name && whatsapp && email) {
+                        $("#startTest").prop("disabled", false);
+                    } else {
+                        $("#startTest").prop("disabled", true);
                     }
                 });
+
+                // Handle the Start Test button click
+                $("#startTest").on("click", function () {
+                    window.location.href = "start.html"; // Replace with the actual start page URL
+                });
+
+                // Handle form submission
+                $("#studentForm").on("submit", function (event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const formData = $(this).serialize();
+
+                    $.ajax({
+                        url: "https://formspree.io/f/myzyarkk",
+                        method: "POST",
+                        data: formData,
+                        dataType: "json",
+                        success: function () {
+                            alert("Form submitted successfully!");
+                        },
+                        error: function () {
+                            alert("There was an error submitting the form. Please try again.");
+                        }
+                    });
+                });
             });
-        });
-    </script>
+        </script>
+    </div>
 </body>
+
 </html>
