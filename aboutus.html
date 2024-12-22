@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ravi Educational Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .mission, .timeline, .gallery {
+            padding: 40px 20px;
+        }
+        .mission h2, .timeline h2, .gallery h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding-top: 30px;
+        }
+        .timeline-item {
+            position: relative;
+            background: #18b1b1;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            width: 28%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            border: none;
+            color: white;
+        }
+        .timeline-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-item i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .timeline-item h5 {
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .timeline-item p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .timeline-item:nth-child(1) {
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to Blue */
+        }
+        .timeline-item:nth-child(2) {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Pink to Orange */
+        }
+        .timeline-item:nth-child(3) {
+            background: linear-gradient(135deg, #00c6ff, #0072ff); /* Cyan to Blue */
+        }
+        .timeline .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #007bff; /* Adjusted to match the theme */
+            border-radius: 50%;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            border: 4px solid #fff; /* Changed border color for visibility */
+        }
+        .timeline .timeline-item:first-child:before {
+            display: none;
+        }
+        .timeline .timeline-item:last-child:before {
+            display: none;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+        }
+        .gallery .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery .card img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="display-4">About Ravi Educational Academy</h1>
+        <p class="lead">Empowering students for over a decade</p>
+    </header>
+
+    <section class="mission bg-light">
+        <h2 class="text-center">Our Mission</h2>
+        <p class="lead text-center">To provide quality education and empower students to achieve academic and professional excellence.</p>
+    </section>
+
+    <section class="timeline">
+        <h2 class="text-center w-100">Our History</h2>
+        
+        <div class="timeline-item">
+            <i class="fas fa-calendar-day"></i>
+            <h5>2010</h5>
+            <p>Academy founded with a vision to transform education and provide top-notch coaching for students. Focused on helping students excel in their academic careers.</p>
+        </div>
+        
+        <div class="timeline-item">
+            <i class="fas fa-calendar-week"></i>
+            <h5>2015</h5>
+            <p>Expanded to include competitive exam training, preparing students for the toughest exams in India. This move opened new opportunities for many aspirants.</p>
+        </div>
+        
+        <div class="timeline-item">
+            <i class="fas fa-calendar-check"></i>
+            <h5>2020</h5>
+            <p>Over 5,000 students enrolled, achieving successful placements and becoming a recognized academy. Our impact on education reached new heights.</p>
+        </div>
+    </section>
+
+    <section class="gallery bg-light">
+        <h2 class="text-center">Campus Tour</h2>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="campus1.jpg" class="card-img-top" alt="Campus 1">
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="campus2.jpg" class="card-img-top" alt="Campus 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>&copy; 2024 Ravi Educational Academy. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
