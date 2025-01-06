@@ -375,7 +375,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-
                                        ${correctAnswerDisplay}`;
     
                 // Call function to update the chart
-                updateChart(correct, wrong, unanswered);
+                startTimer();
+               // updateChart(correct, wrong, unanswered);
             }
     
             function updateChart(correct, wrong, unanswered) {
@@ -410,7 +411,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-
                 });
             }
     
-            startTimer();
+            
         </script>
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
