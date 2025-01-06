@@ -134,8 +134,35 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-
     <!-- Main Test Container -->
     <div class="container">
         <h2 class="text-center mb-4">Test Your Knowledge</h2>
-        <div id="timer">Time Remaining: 180:00</div>
-        <script>startTimer();</script>
+        <div id="timer">Time Remaining: 30:00</div>
+                <!-- Timer Script -->
+        <script>
+            function startTimer(duration, display) {
+                var timer = duration, minutes, seconds;
+                var interval = setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display.textContent = "Time Remaining: " + minutes + ":" + seconds;
+
+                    if (--timer < 0) {
+                        clearInterval(interval);
+                        display.textContent = "Time's Up!";
+                        // Additional actions when time is up, e.g., auto-submit the form
+                        // document.getElementById('testForm').submit();
+                    }
+                }, 1000);
+            }
+
+            window.onload = function () {
+                var timeRemaining = 60 * 30, // 30 minutes
+                    display = document.querySelector('#timer');
+                startTimer(timeRemaining, display);
+            };
+        </script>
 
         <form id="testForm">
             <!-- Mathematics Section -->
