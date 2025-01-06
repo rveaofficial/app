@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RV Educational Institute Mock Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+   
+   <style>
+    /* General styling for canvas */
+#scoreChart {
+    width: 100%; /* Make the width responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 400px; /* Max width for larger screens */
+    max-height: 400px; /* Max height for larger screens */
+    display: block; /* Remove extra space below canvas */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* For laptop and larger screens */
+@media (min-width: 1024px) {
+    #scoreChart {
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 767px) {
+    #scoreChart {
+        max-width: 90%; /* Use 90% width for mobile view */
+        max-height: 300px;
+    }
+}
+
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .logo-section img {
+            max-width: 100px;
+            margin: 10px auto;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .subject-title {
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        @keyframes scrollText {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    </style>
+
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>RV Educational Institute Mock Test</h1>
+    </div>
+
+    <!-- Logo Section -->
+    <div class="logo-section text-center">
+        <img src="logo.png" alt="Logo" class="img-fluid">
+    </div>
+<!-- Message to students -->
+<div style="text-align: center; padding: 50px; background-color: #fef3e6; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); margin: 20px auto; max-width: 800px; overflow: hidden;">
+    <h1 style="font-size: 48px; font-family: 'Arial', sans-serif; background-image: linear-gradient(to right, #ff7e5f, #feb47b); -webkit-background-clip: text; color: transparent; white-space: nowrap; animation: scrollText 10s linear infinite;">
+        <b>ALL THE BEST FROM RVEA</b>
+    </h1>
+    <p style="font-size: 22px; color: #4b4b4b; font-family: 'Arial', sans-serif; padding-top: 20px; line-height: 1.6;">
+        Best wishes for your success! Stay focused and achieve greatness. Remember, every challenge you face is a step towards your goal.
+    </p>
+</div>
+
+    <!-- Main Test Container -->
+    <div class="container">
+        <h2 class="text-center mb-4">Test Your Knowledge</h2>
+        <div id="timer">Time Remaining: 180:00</div>
+
+        <form id="testForm">
+            <!-- Mathematics Section -->
+            <div class="subject-title">General Awareness</div>
+                       <!-- Mathematics Question 1 -->
+
+                       <p>1. Who was the first Prime Minister of India?</p>
+                       <input type="radio" name="q1" value="A"> A) Indira Gandhi<br>
+                       <input type="radio" name="q1" value="B"> B) Jawaharlal Nehru<br>
+                       <input type="radio" name="q1" value="C"> C) Rajendra Prasad<br>
+                       <input type="radio" name="q1" value="D"> D) Sardar Patel<br>
+               
+                       <p>2. Which state is known as the 'Land of Rising Sun' in India?</p>
+                       <input type="radio" name="q2" value="A"> A) Arunachal Pradesh<br>
+                       <input type="radio" name="q2" value="B"> B) Assam<br>
+                       <input type="radio" name="q2" value="C"> C) Sikkim<br>
+                       <input type="radio" name="q2" value="D"> D) Nagaland<br>
+               
+                       <p>3. What is the currency of Japan?</p>
+                       <input type="radio" name="q3" value="A"> A) Won<br>
+                       <input type="radio" name="q3" value="B"> B) Yen<br>
+                       <input type="radio" name="q3" value="C"> C) Dollar<br>
+                       <input type="radio" name="q3" value="D"> D) Peso<br>
+               
+                       <p>4. The 'Battle of Plassey' was fought in which year?</p>
+                       <input type="radio" name="q4" value="A"> A) 1757<br>
+                       <input type="radio" name="q4" value="B"> B) 1761<br>
+                       <input type="radio" name="q4" value="C"> C) 1857<br>
+                       <input type="radio" name="q4" value="D"> D) 1781<br>
+               
+                       <p>5. What is the capital of Australia?</p>
+                       <input type="radio" name="q5" value="A"> A) Sydney<br>
+                       <input type="radio" name="q5" value="B"> B) Melbourne<br>
+                       <input type="radio" name="q5" value="C"> C) Canberra<br>
+                       <input type="radio" name="q5" value="D"> D) Perth<br>
+               
+                       <p>6. Which planet is known as the 'Red Planet'?</p>
+                       <input type="radio" name="q6" value="A"> A) Mars<br>
+                       <input type="radio" name="q6" value="B"> B) Jupiter<br>
+                       <input type="radio" name="q6" value="C"> C) Venus<br>
+                       <input type="radio" name="q6" value="D"> D) Saturn<br>
+               
+                       <p>7. Who is known as the Father of the Indian Constitution?</p>
+                       <input type="radio" name="q7" value="A"> A) Mahatma Gandhi<br>
+                       <input type="radio" name="q7" value="B"> B) Jawaharlal Nehru<br>
+                       <input type="radio" name="q7" value="C"> C) B.R. Ambedkar<br>
+                       <input type="radio" name="q7" value="D"> D) Sardar Vallabhbhai Patel<br>
+               
+                       <p>8. Which Mughal emperor built the Taj Mahal?</p>
+                       <input type="radio" name="q8" value="A"> A) Akbar<br>
+                       <input type="radio" name="q8" value="B"> B) Jahangir<br>
+                       <input type="radio" name="q8" value="C"> C) Shah Jahan<br>
+                       <input type="radio" name="q8" value="D"> D) Aurangzeb<br>
+               
+                       <p>9. What is the SI unit of power?</p>
+                       <input type="radio" name="q9" value="A"> A) Joule<br>
+                       <input type="radio" name="q9" value="B"> B) Watt<br>
+                       <input type="radio" name="q9" value="C"> C) Pascal<br>
+                       <input type="radio" name="q9" value="D"> D) Newton<br>
+               
+                       <p>10. Where is the Gateway of India located?</p>
+                       <input type="radio" name="q10" value="A"> A) Mumbai<br>
+                       <input type="radio" name="q10" value="B"> B) Delhi<br>
+                       <input type="radio" name="q10" value="C"> C) Kolkata<br>
+                       <input type="radio" name="q10" value="D"> D) Chennai<br>
+               
+                       <div class="subject-title">Mathematics </div>             
+                           <p>11. What is the value of 3² + 4²?</p>
+                           <input type="radio" name="q11" value="A"> A) 25<br>
+                           <input type="radio" name="q11" value="B"> B) 15<br>
+                           <input type="radio" name="q11" value="C"> C) 20<br>
+                           <input type="radio" name="q11" value="D"> D) 16<br>
+                   
+                           <p>12. How many diagonals are in a hexagon?</p>
+                           <input type="radio" name="q12" value="A"> A) 12<br>
+                           <input type="radio" name="q12" value="B"> B) 15<br>
+                           <input type="radio" name="q12" value="C"> C) 9<br>
+                           <input type="radio" name="q12" value="D"> D) 10<br>
+                   
+                           <p>13. What is 7% of 200?</p>
+                           <input type="radio" name="q13" value="A"> A) 12<br>
+                           <input type="radio" name="q13" value="B"> B) 14<br>
+                           <input type="radio" name="q13" value="C"> C) 16<br>
+                           <input type="radio" name="q13" value="D"> D) 18<br>
+                   
+                           <p>14. If a triangle has sides of length 3 cm, 4 cm, and 5 cm, what is its perimeter?</p>
+                           <input type="radio" name="q14" value="A"> A) 10 cm<br>
+                           <input type="radio" name="q14" value="B"> B) 12 cm<br>
+                           <input type="radio" name="q14" value="C"> C) 14 cm<br>
+                           <input type="radio" name="q14" value="D"> D) 15 cm<br>
+                   
+                           <p>15. The area of a rectangle is 60 square cm. If the length is 12 cm, what is the width?</p>
+                           <input type="radio" name="q15" value="A"> A) 5 cm<br>
+                           <input type="radio" name="q15" value="B"> B) 8 cm<br>
+                           <input type="radio" name="q15" value="C"> C) 4 cm<br>
+                           <input type="radio" name="q15" value="D"> D) 7 cm<br>
+                   
+                           <p>16. Solve for x: 2x + 5 = 15.</p>
+                           <input type="radio" name="q16" value="A"> A) 5<br>
+                           <input type="radio" name="q16" value="B"> B) 2<br>
+                           <input type="radio" name="q16" value="C"> C) 6<br>
+                           <input type="radio" name="q16" value="D"> D) 3<br>
+                   
+                           <p>17. What is the sum of the angles of a triangle?</p>
+                           <input type="radio" name="q17" value="A"> A) 180 degrees<br>
+                           <input type="radio" name="q17" value="B"> B) 90 degrees<br>
+                           <input type="radio" name="q17" value="C"> C) 360 degrees<br>
+                           <input type="radio" name="q17" value="D"> D) 270 degrees<br>
+                   
+                           <p>18. Find the cube root of 512.</p>
+                           <input type="radio" name="q18" value="A"> A) 8<br>
+                           <input type="radio" name="q18" value="B"> B) 7<br>
+                           <input type="radio" name="q18" value="C"> C) 6<br>
+                           <input type="radio" name="q18" value="D"> D) 9<br>
+                   
+                           <p>19. A wheel makes 60 rotations per minute. How many rotations will it make in 3 hours?</p>
+                           <input type="radio" name="q19" value="A"> A) 10800<br>
+                           <input type="radio" name="q19" value="B"> B) 1800<br>
+                           <input type="radio" name="q19" value="C"> C) 3600<br>
+                           <input type="radio" name="q19" value="D"> D) 7200<br>
+                   
+                           <p>20. What is the area of a circle with a radius of 7 cm? (Use π = 22/7)</p>
+                           <input type="radio" name="q20" value="A"> A) 154 cm²<br>
+                           <input type="radio" name="q20" value="B"> B) 140 cm²<br>
+                           <input type="radio" name="q20" value="C"> C) 22 cm²<br>
+                           <input type="radio" name="q20" value="D"> D) 50 cm²<br>                                 
+                <div class="subject-title">General Intelligence and Reasoning</div>
+                               <p>21. If Z = 52, Y = 51, X = 50, then what is V?</p>
+                               <input type="radio" name="q21" value="A"> A) 47<br>
+                               <input type="radio" name="q21" value="B"> B) 48<br>
+                               <input type="radio" name="q21" value="C"> C) 49<br>
+                               <input type="radio" name="q21" value="D"> D) 46<br>
+                       
+                               <p>22. Complete the series: 2, 4, 8, 16, 32, ?</p>
+                               <input type="radio" name="q22" value="A"> A) 48<br>
+                               <input type="radio" name="q22" value="B"> B) 54<br>
+                               <input type="radio" name="q22" value="C"> C) 64<br>
+                               <input type="radio" name="q22" value="D"> D) 62<br>
+                       
+                               <p>23. Identify the odd one out: 27, 64, 125, 144</p>
+                               <input type="radio" name="q23" value="A"> A) 27<br>
+                               <input type="radio" name="q23" value="B"> B) 64<br>
+                               <input type="radio" name="q23" value="C"> C) 125<br>
+                               <input type="radio" name="q23" value="D"> D) 144<br>
+                       
+                               <p>24. Pointing to a photograph, Ram said, "She is the mother of my son's mother." How is the woman in the photograph related to Ram?</p>
+                               <input type="radio" name="q24" value="A"> A) Wife<br>
+                               <input type="radio" name="q24" value="B"> B) Daughter<br>
+                               <input type="radio" name="q24" value="C"> C) Mother-in-law<br>
+                               <input type="radio" name="q24" value="D"> D) Mother<br>
+                       
+                               <p>25. Which one does not belong in the group? (Pen, Pencil, Eraser, Spoon)</p>
+                               <input type="radio" name="q25" value="A"> A) Pen<br>
+                               <input type="radio" name="q25" value="B"> B) Pencil<br>
+                               <input type="radio" name="q25" value="C"> C) Eraser<br>
+                               <input type="radio" name="q25" value="D"> D) Spoon<br>
+                       
+                               <p>26. Arrange the following words in dictionary order: Goat, God, Ghost, Gold.</p>
+                               <input type="radio" name="q26" value="A"> A) Ghost, Goat, God, Gold<br>
+                               <input type="radio" name="q26" value="B"> B) Ghost, God, Gold, Goat<br>
+                               <input type="radio" name="q26" value="C"> C) Ghost, Goat, Gold, God<br>
+                               <input type="radio" name="q26" value="D"> D) Goat, Ghost, Gold, God<br>
+                       
+                               <p>27. If TABLE is written as GZOVI, how is CHAIR written?</p>
+                               <input type="radio" name="q27" value="A"> A) XVZWJ<br>
+                               <input type="radio" name="q27" value="B"> B) XZWJY<br>
+                               <input type="radio" name="q27" value="C"> C) XZWJI<br>
+                               <input type="radio" name="q27" value="D"> D) XYZWJ<br>
+                       
+                               <p>28. Find the next number in the series: 3, 5, 9, 17, ?</p>
+                               <input type="radio" name="q28" value="A"> A) 25<br>
+                               <input type="radio" name="q28" value="B"> B) 33<br>
+                               <input type="radio" name="q28" value="C"> C) 31<br>
+                               <input type="radio" name="q28" value="D"> D) 29<br>
+                       
+                               <p>29. What is the angle between the hour hand and the minute hand of a clock at 9:15?</p>
+                               <input type="radio" name="q29" value="A"> A) 90°<br>
+                               <input type="radio" name="q29" value="B"> B) 82.5°<br>
+                               <input type="radio" name="q29" value="C"> C) 92°<br>
+                               <input type="radio" name="q29" value="D"> D) 97°<br>
+                       
+                               <p>30. A mother is 5 times as old as her daughter. After 5 years, she will be 3 times as old as her daughter. What is the daughter's current age?</p>
+                               <input type="radio" name="q30" value="A"> A) 5 years<br>
+                               <input type="radio" name="q30" value="B"> B) 10 years<br>
+                               <input type="radio" name="q30" value="C"> C) 15 years<br>
+                               <input type="radio" name="q30" value="D"> D) 20 years<br>
+            
+            
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-primary w-100" onclick="calculateScore()">Submit</button>
+        </form>
+        <div id="result"></div>
+
+        <div>
+            <canvas id="scoreChart" width="20" height="20"></canvas>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+        <script>
+            function calculateScore() {
+                const form = document.getElementById('testForm');
+                const resultDiv = document.getElementById('result');
+                const answers = new FormData(form);
+    
+                const correctAnswers = {
+                    q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'C',
+                    q6: 'A', q7: 'C', q8: 'C', q9: 'B', q10: 'A',
+                    q11: 'A', q12: 'C', q13: 'B', q14: 'B', q15: 'B',
+                    q16: 'B', q17: 'A', q18: 'A', q19: 'A', q20: 'A',
+                    q21: 'C', q22: 'C', q23: 'D', q24: 'C', q25: 'D',
+                    q26: 'B', q27: 'C', q28: 'C', q29: 'B', q30: 'B'
+                };
+    
+                let score = 0, correct = 0, wrong = 0, unanswered = 0;
+                let correctAnswerDisplay = "<h4>Correct Answers</h4>";
+    
+                for (let question in correctAnswers) {
+                    const userAnswer = answers.get(question);
+                    if (userAnswer === null) {
+                        unanswered++;
+                    } else {
+                        if (userAnswer === correctAnswers[question]) {
+                            score += 4;
+                            correct++;
+                        } else {
+                            score -= 1;
+                            wrong++;
+                        }
+                        correctAnswerDisplay += `<p>${question}: Your Answer: ${userAnswer}, Correct Answer: ${correctAnswers[question]}</p>`;
+                    }
+                }
+    
+                resultDiv.innerHTML = `<h4>Your Score: ${score}</h4>
+                                       <p>Correct Answers: ${correct}</p>
+                                       <p>Wrong Answers: ${wrong}</p>
+                                       <p>Unanswered Questions: ${unanswered}</p>
+                                       ${correctAnswerDisplay}`;
+    
+                // Call function to update the chart
+                updateChart(correct, wrong, unanswered);
+            }
+    
+            function updateChart(correct, wrong, unanswered) {
+                const ctx = document.getElementById('scoreChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Correct', 'Wrong', 'Unanswered'],
+                        datasets: [{
+                            label: 'Student Analytics',
+                            data: [correct, wrong, unanswered],
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.2)', // Light green for correct
+                                'rgba(255, 99, 132, 0.2)',  // Light red for wrong
+                                'rgba(255, 206, 86, 0.2)'   // Light yellow for unanswered
+                            ],
+                            borderColor: [
+                                'rgba(75, 192, 192, 1)',    // Dark green for correct
+                                'rgba(255, 99, 132, 1)',    // Dark red for wrong
+                                'rgba(255, 206, 86, 1)'     // Dark yellow for unanswered
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+    
+            startTimer();
+        </script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
